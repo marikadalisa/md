@@ -175,7 +175,6 @@ body{
 
 @media (min-width: 992px) {
     .contenitore {
-
         flex-direction: row;
         align-items: flex-start;
     }
