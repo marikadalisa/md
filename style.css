@@ -3,6 +3,7 @@ html{
 }
 body{
     margin-left: 20px;
+    background-color: rgb(204, 251, 251);
     
 }
 
@@ -15,3 +16,21 @@ padding: 0;
 li{
     font-size: 1.5rem;
 }
+
+a, a:link{
+    color: hsl(242, 100%, 50%);
+    text-decoration: none;
+}
+
+a:visited{
+color:  hsl(185, 100%, 38%);
+}
+
+a:hover, a:focus{
+    color:hsl(242, 100%, 30%);
+}
+
+a:active{
+    color:hsl(242, 100%, 10%);
+}
+
