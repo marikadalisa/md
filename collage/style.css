@@ -6,10 +6,11 @@ body {
 
 .contenitore {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
+    display: flex;
     flex-direction: column;
-    overflow: hidden ;
+    overflow: hidden;
 }
 
 .sfondo {
@@ -24,56 +25,140 @@ body {
     background-position: center;
     opacity: 0.5;
     z-index: 0;
-   
 }
 
 .testo {
-    font-size: 80px;
-    font-family: "Charlotte", sans-serif;
+    font-size: clamp(50px, 8vw, 160px);
+    font-family: "Hurricane", cursive;
+    font-weight: 400;
+    font-style: normal;
     color: #ff0000;
     position: absolute;
-    bottom: 10%;       
-    left: 50%;         
+    bottom: 10%;
+    left: 50%;
     transform: translateX(-50%);
     text-align: center;
     z-index: 15;
-    width: 100%;
+    width: auto;
+    height: auto;
+
+    animation: pop 1.5s ease-out forwards;
 }
 
-@font-face {
-  font-family: "Charlotte";
-  src: url("../fonts/Charlotte.ttf") format("truetype");
+@keyframes pop {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
 }
+
+
 
 .memories {
     position: absolute;
-    bottom: 2%; 
+    bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
-    z-index: 14; 
+    width: 70vw;
+    max-width: 700px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    z-index: 14;
+    gap: 1vw;
+}
+
+.memories img {
+    display: block;
+    width: 12%;
+    max-width: 100px;
+    min-width: 30px;
+    height: auto;
+    animation: pop 2s ease forwards;
+}
+
+.memories img:nth-child(odd) {
+    animation-name: pop-odd;
+    transform: translateY(-10px);
+}
+
+.memories img:nth-child(even) {
+    animation-name: pop-even;
+    transform: translateY(10px);
+}
+
+@keyframes pop-odd {
+    0% { 
+        transform: translateY(-10px) scale(1); 
+    }
+    50% { 
+        transform: translateY(-10px) scale(1.2); 
+    }
+    100% { 
+        transform: translateY(-10px) scale(1); 
+    }
+}
+
+@keyframes pop-even {
+    0% {   
+        transform: translateY(10px) scale(1);  
+    }
+    50% { 
+        transform: translateY(10px) scale(1.2); 
+    }
+    100% { 
+        transform: translateY(10px) scale(1); 
+    }
 }
 
 .polaroid {
     position: absolute;
-    width: 45vw;
+    width: 35vw;
     max-width: 350px;
     height: auto;
 }
 
 .p1 {
-    top: 15%;
-    right: 20%;
-    transform: rotate(-15deg);
     z-index: 4;
+    position: absolute;
+    right: -300px;
+    animation: slide-top_p1 1s ease-out forwards;
+}
+@keyframes slide-top_p1{
+  from {
+        top: -300px;
+     }
+  to {
+        top: 1%;
+        left: 5%;
+        transform: translateX(10%) rotate(15deg);
+    }
 }
 
 .p2 {
     top: 25%;
-    left: 1%;
-    transform: rotate(10deg); 
+    left: -300px;
     z-index: 5;
+    animation: slide-right_10deg 1s ease-out forwards;
+}
+@keyframes slide-right_10deg {
+  from {
+        left: -300px;
+    }
+  to {
+        left: 5%;
+        transform: translateX(10%) rotate(10deg);
+    }
 }
 
 .p3 {
@@ -81,6 +166,17 @@ body {
     left: 50%;
     transform: rotate(5deg); 
     z-index: 3;
+    animation: slide-top_p3 1s ease-out forwards;
+}
+@keyframes slide-top_p3{
+  from {
+        top: -300px;
+    }
+  to {
+        top: 1%;
+        left: 50%;
+        transform: translateX(10%) rotate(-20deg);
+    }
 }
 
 .p4 {
@@ -88,135 +184,215 @@ body {
     right: 5%;
     transform: rotate(25deg); 
     z-index: 6;
+    animation: slide-left_p4 1s ease-out forwards;
+}
+@keyframes slide-left_p4{
+  from {
+        right: -300px;
+    }
+  to {
+        bottom: 30%;
+        right: 25%;
+        transform: translateX(50%) rotate(25deg);
+    }
 }
 
 .p5 {
-    bottom: 65%;
-    right: 53%;
+    bottom: 20%;
+    right: 30%;
     transform: rotate(-15deg); 
-    z-index: 3;
+    z-index: 10;
+    animation: slide-left_p5 1s ease-out forwards;
+}
+@keyframes slide-left_p5{
+  from {
+        right: -300px;
+    }
+  to {
+        bottom: 20%;
+        right: 30%;
+        transform: translateX(50%) rotate(-15deg);
+    }
 }
 
 .p6 {
-    bottom: 35%;
-    right: 30%;
+    bottom: 50%;
+    left: 40%;
     transform: rotate(-10deg); 
     z-index: 6;
+    animation: slide-right_p6 1s ease-out forwards;
+}
+@keyframes slide-right_p6{
+  from {
+     left: -300px;
+    }
+  to {
+        bottom: 50%;
+        left: 30%;
+        transform: translateX(10%) rotate(-20deg);
+     }
 }
 
 .p7 {
-    top: 1%;
+    top: 15%;
     right: 2%;
     transform: rotate(10deg); 
     z-index: 8;
+    animation: slide-left_p7 1s ease-out forwards;
 }
-.p8 {
-    bottom: 20%;
-    right: 10%;
-    transform: rotate(-30deg); 
-    z-index: 9;
+@keyframes slide-left_p7{
+  from {
+        right: -300px;
+    }
+  to {
+        top: 15%;
+        right: 25%;
+        transform: translateX(50%) rotate(15deg);
+    }
 }
 
-.p9 {
-    top: 50%;
-    right: 50%;
-    transform: rotate(15deg); 
-    z-index: 10;
+.p8 {
+    bottom: 25%;
+    left: 10%;
+    z-index: 9;
+    animation: slide-right_p8 1s ease-out forwards;
 }
+@keyframes slide-right_p8{
+  from {
+        left: -300px;
+    }
+  to {
+        bottom: 25%;
+        left: 10%;
+        transform: translateX(10%) rotate(-10deg);
+    }
+}
+
+
+.p9 {
+    top: 25%;
+    left: -300px;
+    z-index: 5;
+    animation: slide-left_p9 1s ease-out forwards;
+}
+@keyframes slide-left_p9 {
+  from {
+        right: -300px;
+    }
+  to {
+        top: 25%;
+        right: 10%;
+        transform: translateX(50%) rotate(10deg);
+    }
+}
+
 
 
 @media (min-width: 992px) {
 
      .contenitore {
+        display: flex;
         flex-direction: row;
         align-items: flex-start;
+        position: relative;
     }
 
-    .testo {
-        top: 5%;
+    .testo{
+        font-size: 150px;
+        position: absolute;
+        top: -5%;
         left: 50%;
-        transform: translateX(-50%) rotate(-5deg);
-        width: auto;
+        transform: translateX(-50%);        
+        z-index: 15;
+        width: 100%;
+
+        transform: translateX(-50%) scale(0);
+        animation: pop 1.5s ease-out forwards;
     }
     
-    .testo p {
-        font-size: 160px;
+
+    @keyframes pop {
+        0% {
+            transform: translateX(-50%) scale(0);
+            opacity: 0;
+        }
+        70% {
+            transform: translateX(-50%) scale(1.2);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+        }
     }
 
     
     .memories {
-        top: 43%; 
-        left: 48%;
-        right: auto;
-        transform: translate(-50%, -50%);
-        width: 600px;
+        bottom:70%; 
+        left: 50%;
+        width: 700px;
+        transform: translateX(-50%);
+    }
+
+    .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9 {
+        animation: none !important;
     }
 
     .polaroid {
-        width: 900px;
-        padding: 10px 10px 40px 10px;
+        position: absolute;
+        width: 18vw;
     }
 
     .p1 {
-        top: 15%;
-        left: 2%; 
-        right: auto;
+        top: 10%;
+        left: 5%;
         transform: rotate(-15deg);
     }
 
     .p2 {
-        top: 10%;
-        left: auto;
-        right: 15%;
-        transform: rotate(10deg); 
+        top: 30%;
+        right: 40%;
+        transform: rotate(10deg);
     }
 
     .p3 {
-        top: auto;
-        bottom: 4%;
-        left: 8%;
-        transform: rotate(5deg); 
-        z-index: 8;
+        top: 60%;
+        left: 4%;
+        transform: rotate(5deg);
     }
 
     .p4 {
-        top: auto; 
         bottom: 1%;
         right: 5%;
-        left: auto;
-        transform: rotate(30deg); 
+        transform: rotate(30deg);
     }
-    
+
     .p5 {
-        top: 60%;
-        left: 40%;
-        transform: translateX(-50%) rotate(-10deg);
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%) rotate(10deg);
     }
 
     .p6 {
-        bottom: 15%;
-        right: 30%;
-        transform: rotate(-10deg); 
-        z-index: 6;
+        top: 45%;
+        left: 55%;
+        transform: rotate(-10deg);
     }
 
     .p7 {
-        top: 1%;
-        right: 2%;
-        transform: rotate(10deg); 
-        z-index: 8;
+        top: 3%;
+        right: 3%;
+        transform: rotate(-10deg);
     }
+
     .p8 {
-        bottom: 20%;
-        right: 10%;
-        transform: rotate(-30deg); 
-        z-index: 9;
+        top: 45%;
+        left: 20%;
+        transform: rotate(-20deg);
     }
 
     .p9 {
         top: 30%;
         right: 55%;
-        transform: rotate(15deg); 
-        z-index: 10;
+        transform: rotate(15deg);
     }
-}
