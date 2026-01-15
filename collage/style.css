@@ -87,6 +87,16 @@ body {
     animation: pop 2s ease forwards;
 }
 
+.m {
+    animation-name: pop-odd;
+    animation-delay: 0ms;
+}
+
+.e {
+    animation-name: pop-even;
+    animation-delay: 300ms;
+}
+
 .memories img:nth-child(odd) {
     animation-name: pop-odd;
     transform: translateY(-10px);
@@ -97,15 +107,11 @@ body {
     transform: translateY(10px);
 }
 
+
 @keyframes pop-odd {
-    0% { 
-        transform: translateY(-10px) scale(1); 
-    }
-    50% { 
-        transform: translateY(-10px) scale(1.2); 
-    }
-    100% { 
-        transform: translateY(-10px) scale(1); 
+    
+    from {
+
     }
 }
 
