@@ -179,7 +179,7 @@ body {
         top: -300px;
     }
   to {
-        top: 1%;
+        top: 30%;
         left: 50%;
         transform: translateX(10%) rotate(-20deg);
     }
@@ -197,8 +197,8 @@ body {
         right: -300px;
     }
   to {
-        bottom: 30%;
-        right: 25%;
+        bottom: 18%;
+        right: 30%;
         transform: translateX(50%) rotate(25deg);
     }
 }
@@ -224,7 +224,7 @@ body {
 .p6 {
     bottom: 50%;
     left: 40%;
-    transform: rotate(-10deg); 
+    transform: rotate(0deg); 
     z-index: 6;
     animation: slide-right_p6 1s ease-out forwards;
 }
@@ -235,7 +235,7 @@ body {
   to {
         bottom: 50%;
         left: 30%;
-        transform: translateX(10%) rotate(-20deg);
+        transform: translateX(10%) rotate(-10deg);
      }
 }
 
@@ -306,7 +306,7 @@ body {
     .testo{
         font-size: 150px;
         position: absolute;
-        top: -5%;
+        top: 2%;
         left: 50%;
         transform: translateX(-50%);        
         z-index: 15;
@@ -341,7 +341,7 @@ body {
     }
 
     .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9 {
-        animation: none !important;
+        
     }
 
     .polaroid {
@@ -368,26 +368,26 @@ body {
     }
 
     .p4 {
-        bottom: 1%;
-        right: 5%;
+        top: 50%;
+        right: 0%;
         transform: rotate(30deg);
     }
 
     .p5 {
         top: 40%;
-        left: 50%;
+        left: 70%;
         transform: translateX(-50%) rotate(10deg);
     }
 
     .p6 {
-        top: 45%;
-        left: 55%;
-        transform: rotate(-10deg);
+        top: 50%;
+        left: 80%;
+        transform: rotate(10deg);
     }
 
     .p7 {
-        top: 3%;
-        right: 3%;
+        top: 0%;
+        right: 10%;
         transform: rotate(-10deg);
     }
 
