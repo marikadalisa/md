@@ -41,7 +41,6 @@ body {
     z-index: 15;
     width: auto;
     height: auto;
-
     animation: pop 1.5s ease-out forwards;
 }
 
@@ -59,8 +58,6 @@ body {
         opacity: 1;
     }
 }
-
-
 
 .memories {
     position: absolute;
@@ -87,16 +84,6 @@ body {
     animation: pop 2s ease forwards;
 }
 
-.m {
-    animation-name: pop-odd;
-    animation-delay: 0ms;
-}
-
-.e {
-    animation-name: pop-even;
-    animation-delay: 300ms;
-}
-
 .memories img:nth-child(odd) {
     animation-name: pop-odd;
     transform: translateY(-10px);
@@ -107,25 +94,19 @@ body {
     transform: translateY(10px);
 }
 
-
 @keyframes pop-odd {
-    
-    from {
-
-    }
+    0% { transform: translateY(-10px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.2); }
+    100% { transform: translateY(-10px) scale(1); }
 }
 
 @keyframes pop-even {
-    0% {   
-        transform: translateY(10px) scale(1);  
-    }
-    50% { 
-        transform: translateY(10px) scale(1.2); 
-    }
-    100% { 
-        transform: translateY(10px) scale(1); 
-    }
+    0% { transform: translateY(10px) scale(1); }
+    50% { transform: translateY(10px) scale(1.2); }
+    100% { transform: translateY(10px) scale(1); }
 }
+
+/* polaroid */
 
 .polaroid {
     position: absolute;
@@ -140,11 +121,12 @@ body {
     right: -300px;
     animation: slide-top_p1 1s ease-out forwards;
 }
-@keyframes slide-top_p1{
-  from {
+
+@keyframes slide-top_p1 {
+    from {
         top: -300px;
-     }
-  to {
+    }
+    to {
         top: 1%;
         left: 5%;
         transform: translateX(10%) rotate(15deg);
@@ -157,11 +139,12 @@ body {
     z-index: 5;
     animation: slide-right_10deg 1s ease-out forwards;
 }
+
 @keyframes slide-right_10deg {
-  from {
+    from {
         left: -300px;
     }
-  to {
+    to {
         left: 5%;
         transform: translateX(10%) rotate(10deg);
     }
@@ -170,15 +153,16 @@ body {
 .p3 {
     top: 1%;
     left: 50%;
-    transform: rotate(5deg); 
+    transform: rotate(5deg);
     z-index: 3;
     animation: slide-top_p3 1s ease-out forwards;
 }
-@keyframes slide-top_p3{
-  from {
+
+@keyframes slide-top_p3 {
+    from {
         top: -300px;
     }
-  to {
+    to {
         top: 30%;
         left: 50%;
         transform: translateX(10%) rotate(-20deg);
@@ -188,15 +172,16 @@ body {
 .p4 {
     bottom: 30%;
     right: 5%;
-    transform: rotate(25deg); 
+    transform: rotate(25deg);
     z-index: 6;
     animation: slide-left_p4 1s ease-out forwards;
 }
-@keyframes slide-left_p4{
-  from {
+
+@keyframes slide-left_p4 {
+    from {
         right: -300px;
     }
-  to {
+    to {
         bottom: 18%;
         right: 30%;
         transform: translateX(50%) rotate(25deg);
@@ -206,15 +191,16 @@ body {
 .p5 {
     bottom: 20%;
     right: 30%;
-    transform: rotate(-15deg); 
+    transform: rotate(-15deg);
     z-index: 10;
     animation: slide-left_p5 1s ease-out forwards;
 }
-@keyframes slide-left_p5{
-  from {
+
+@keyframes slide-left_p5 {
+    from {
         right: -300px;
     }
-  to {
+    to {
         bottom: 20%;
         right: 30%;
         transform: translateX(50%) rotate(-15deg);
@@ -224,33 +210,35 @@ body {
 .p6 {
     bottom: 50%;
     left: 40%;
-    transform: rotate(0deg); 
+    transform: rotate(0deg);
     z-index: 6;
     animation: slide-right_p6 1s ease-out forwards;
 }
-@keyframes slide-right_p6{
-  from {
-     left: -300px;
+
+@keyframes slide-right_p6 {
+    from {
+        left: -300px;
     }
-  to {
+    to {
         bottom: 50%;
         left: 30%;
         transform: translateX(10%) rotate(-10deg);
-     }
+    }
 }
 
 .p7 {
     top: 15%;
     right: 2%;
-    transform: rotate(10deg); 
+    transform: rotate(10deg);
     z-index: 8;
     animation: slide-left_p7 1s ease-out forwards;
 }
-@keyframes slide-left_p7{
-  from {
+
+@keyframes slide-left_p7 {
+    from {
         right: -300px;
     }
-  to {
+    to {
         top: 15%;
         right: 25%;
         transform: translateX(50%) rotate(15deg);
@@ -263,29 +251,30 @@ body {
     z-index: 9;
     animation: slide-right_p8 1s ease-out forwards;
 }
-@keyframes slide-right_p8{
-  from {
+
+@keyframes slide-right_p8 {
+    from {
         left: -300px;
     }
-  to {
+    to {
         bottom: 25%;
         left: 10%;
         transform: translateX(10%) rotate(-10deg);
     }
 }
 
-
 .p9 {
     top: 25%;
-    left: -300px;
+    right: -300px; /* FIX */
     z-index: 5;
     animation: slide-left_p9 1s ease-out forwards;
 }
+
 @keyframes slide-left_p9 {
-  from {
+    from {
         right: -300px;
     }
-  to {
+    to {
         top: 25%;
         right: 10%;
         transform: translateX(50%) rotate(10deg);
@@ -293,55 +282,31 @@ body {
 }
 
 
-
 @media (min-width: 992px) {
 
-     .contenitore {
+    .contenitore {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         position: relative;
     }
 
-    .testo{
+    .testo {
         font-size: 150px;
         position: absolute;
         top: 2%;
         left: 50%;
-        transform: translateX(-50%);        
+        transform: translateX(-50%) scale(0); 
         z-index: 15;
         width: 100%;
-
-        transform: translateX(-50%) scale(0);
         animation: pop 1.5s ease-out forwards;
     }
-    
 
-    @keyframes pop {
-        0% {
-            transform: translateX(-50%) scale(0);
-            opacity: 0;
-        }
-        70% {
-            transform: translateX(-50%) scale(1.2);
-            opacity: 1;
-        }
-        100% {
-            transform: translateX(-50%) scale(1);
-            opacity: 1;
-        }
-    }
-
-    
     .memories {
-        bottom:70%; 
+        bottom: 70%;
         left: 50%;
         width: 700px;
         transform: translateX(-50%);
-    }
-
-    .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9 {
-        
     }
 
     .polaroid {
@@ -349,56 +314,32 @@ body {
         width: 18vw;
     }
 
-    .p1 {
-        top: 10%;
-        left: 5%;
-        transform: rotate(-15deg);
+    .p1 { 
+        top: 10%; left: 5%; transform: rotate(-15deg); 
+    }
+    .p2 { 
+        top: 30%; right: 40%; transform: rotate(10deg); 
+    }
+    .p3 { 
+        top: 60%; left: 4%; transform: rotate(5deg); 
+    }
+    .p4 { 
+        top: 50%; right: 0%; transform: rotate(30deg); 
+    }
+    .p5 { 
+        top: 40%; left: 70%; transform: translateX(-50%) rotate(10deg); 
+    }
+    .p6 { 
+        top: 50%; left: 80%; transform: rotate(10deg); 
+    }
+    .p7 { 
+        top: 0%; right: 10%; transform: rotate(-10deg); 
+    }
+    .p8 { 
+        top: 45%; left: 20%; transform: rotate(-20deg); 
+    }
+    .p9 { 
+        top: 30%; right: 55%; transform: rotate(15deg); 
     }
 
-    .p2 {
-        top: 30%;
-        right: 40%;
-        transform: rotate(10deg);
-    }
-
-    .p3 {
-        top: 60%;
-        left: 4%;
-        transform: rotate(5deg);
-    }
-
-    .p4 {
-        top: 50%;
-        right: 0%;
-        transform: rotate(30deg);
-    }
-
-    .p5 {
-        top: 40%;
-        left: 70%;
-        transform: translateX(-50%) rotate(10deg);
-    }
-
-    .p6 {
-        top: 50%;
-        left: 80%;
-        transform: rotate(10deg);
-    }
-
-    .p7 {
-        top: 0%;
-        right: 10%;
-        transform: rotate(-10deg);
-    }
-
-    .p8 {
-        top: 45%;
-        left: 20%;
-        transform: rotate(-20deg);
-    }
-
-    .p9 {
-        top: 30%;
-        right: 55%;
-        transform: rotate(15deg);
-    }
+}
