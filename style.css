@@ -288,20 +288,22 @@ figure figcaption:hover {
     border-radius: 6px;
     padding-right: 95px;
     padding-top: 20%;
-}
-.descrizione {
-  font-size: 12px;
-  
-  max-width: 100%;
+  }
 
-  column-count: 2;
-  column-gap: 50px;
-}
+  .descrizione {
+    font-size: 12px;
+    
+    max-width: 100%;
 
-h2 {
-  font-size: 20px;
-}
+    column-count: 2;
+    column-gap: 50px;
+  }
 
-p {
-  font-size: 14px;
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
 }
